@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Skarb piratów</title>
+    <script>
+        window.onload = init;
+        function init() {
+            var map = document.getElementById("map");
+            map.onmousemove = showCoords;
+        }
+
+        function showCoords(eventObj) {
+            var map = document.getElementById("coords");
+            var x = eventObj.clientX;
+            var y = eventObj.clientY;
+            map.innerHTML = "Współrzędne na mapie: " + x + ", " + y;
+        }
+        function timeHandler() {
+            alert("Hej! I co tak siedzisz, gapiąc się na ekran? Zrób coś!");
+
+        }
+        setTimeout(timeHandler, 5000);
+    </script>
+</head>
+<body>
+    <img src="map.jpg" alt="" id="map">
+    <p id="coords">Przesuń wskaźnik myszy na mapęm by odczytać współrzędne...</p>
+</body>
+</html>
